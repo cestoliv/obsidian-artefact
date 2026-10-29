@@ -6,6 +6,20 @@ The agent marks each comment as resolved through the Obsidian CLI.
 
 Requires Obsidian 1.12.2 or later, desktop only. Supports Live Preview and Source mode.
 
+## Install
+
+The plugin is not in the community plugin store yet. Install it with [BRAT](https://github.com/TfTHacker/obsidian42-brat):
+
+1. In Obsidian, install and enable the **BRAT** community plugin.
+2. Run the command **BRAT: Add a beta plugin for testing**.
+3. Enter `cestoliv/obsidian-artefact`, then click **Add Plugin**.
+4. In **Settings → Community plugins**, enable **Artefact comments**.
+
+BRAT installs new releases when it checks for updates.
+
+To install by hand, download `main.js`, `manifest.json` and `styles.css` from the [latest release](https://github.com/cestoliv/obsidian-artefact/releases/latest).
+Put them in `<vault>/.obsidian/plugins/obsidian-artefact/`, then enable the plugin.
+
 ## Use
 
 - **Comment on a block:** move the pointer over a paragraph, heading, list item, code block, table or callout, then click the comment button at its right edge.
@@ -57,3 +71,16 @@ npm run dev       # rebuild main.js on change
 3. After each build, reload it: `obsidian vault=<vault> plugin:reload id=obsidian-artefact`.
 
 `test-vault/Review.md` has one block of each kind for manual tests.
+
+## Release
+
+BRAT reads the GitHub releases. The tag must equal the `version` in `manifest.json`, with no `v` prefix.
+
+1. Set the new version in `manifest.json` and `package.json`.
+2. Commit and push to `main`.
+3. Build the plugin: `npm run build`.
+4. Publish the release with the three plugin files:
+
+```sh
+gh release create 0.2.0 main.js manifest.json styles.css --title "0.2.0" --notes "What changed"
+```
