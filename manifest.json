@@ -1,0 +1,9 @@
+{
+	"id": "obsidian-artefact",
+	"name": "Artefact comments",
+	"version": "0.1.0",
+	"minAppVersion": "1.12.2",
+	"description": "Comment on blocks and selections, then copy the comments as a prompt for your AI agent.",
+	"author": "Olivier Cartier",
+	"isDesktopOnly": true
+}

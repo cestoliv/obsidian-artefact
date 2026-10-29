@@ -1,0 +1,22 @@
+{
+	"name": "obsidian-artefact",
+	"version": "0.1.0",
+	"description": "Comment on notes like Claude artifacts, copy the comments for your agent.",
+	"main": "main.js",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit && node esbuild.config.mjs production",
+		"test": "node --test src/*.test.ts"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@codemirror/state": "^6.7.6",
+		"@codemirror/view": "^6.43.13",
+		"@types/node": "^26.6.5",
+		"esbuild": "^0.25.5",
+		"obsidian": "^1.14.4",
+		"typescript": "^7.0.2"
+	}
+}
